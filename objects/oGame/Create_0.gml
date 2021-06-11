@@ -11,6 +11,14 @@ global.game_state = {
 	kills: 0
 }
 
+function reset_game_state() {
+	global.game_state = {
+		current_room: noone,
+		weapons: [],
+		kills: 0
+	}
+}
+
 function toggle_fullscreen() {
 	window_set_fullscreen(!window_get_fullscreen());
 }
@@ -25,6 +33,7 @@ function play_soundtrack(_soundtrack) {
 	}
 	
 	audio_stop_all();
+	audio_sound_gain(_soundtrack, 1, 0);
 	audio_play_sound(_soundtrack, 1000, true);
 	current_soundtrack = _soundtrack;
 }

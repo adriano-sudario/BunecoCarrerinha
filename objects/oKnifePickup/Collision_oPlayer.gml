@@ -1,5 +1,5 @@
 if (other.knife == noone || other.knife.object_index != oKnife)
-	other.knife = equip_weapon(other, oKnife, 1);
+	other.knife = equip_weapon(other, oKnife);
 
 instance_destroy();
 

@@ -1,1 +1,0 @@
-audio_sound_gain(oGame.current_soundtrack, 0, 500);

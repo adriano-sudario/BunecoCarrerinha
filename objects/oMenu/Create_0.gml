@@ -33,13 +33,17 @@ continue_item = {
 	on_selected: function() {
 		if (!file_exists(SAVE_FILE))
 			return;
-		
+		with(oGame)
+			audio_sound_gain(current_soundtrack, 0, 500);
 		with(oMenu) {
 			has_all_items_arrived = false;
 			horizontal_position = gui_width + starting_position_offset;
 		}
 		slide_transition(TRANSITION_MODE.CLOSE, function() {
 			load_game_state();
+			if (array_length(global.game_state.weapons) > 0)
+				with(oGame)
+					play_soundtrack(stkBodiadinho);
 			room_goto(global.game_state.current_room);
 			slide_transition(TRANSITION_MODE.OPEN);
 		}, 250);
@@ -50,6 +54,10 @@ new_game_item = {
 	y: 0,
 	text: "New Game",
 	on_selected: function() {
+		with(oGame) {
+			reset_game_state();
+			audio_sound_gain(current_soundtrack, 0, 500);
+		}
 		with(oMenu) {
 			has_all_items_arrived = false;
 			horizontal_position = gui_width + starting_position_offset;
