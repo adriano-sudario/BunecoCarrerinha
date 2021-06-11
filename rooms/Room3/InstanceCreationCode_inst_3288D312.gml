@@ -1,0 +1,1 @@
+direction_trigger = -1;

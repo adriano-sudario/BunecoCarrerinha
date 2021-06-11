@@ -1,0 +1,1 @@
+visible = !oPlayer.controls.is_using_gamepad;

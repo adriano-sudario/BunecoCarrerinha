@@ -1,0 +1,1 @@
+text = "BORA, BOE!\nPEGUE O BECO!";
