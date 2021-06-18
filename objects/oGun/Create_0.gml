@@ -20,7 +20,7 @@ function shoot() {
 	
 	with (instance_create_layer(x, y, "Bullets", oBullet)) {
 		gun = other;
-		speed = gun.owner.object_index == oPlayer ? 25 : 15;
+		speed = gun.owner.object_index == oPlayer ? 25 : 10;
 		direction = other.image_angle + random_range(-3, 3);
 		image_angle = direction;
 	}
