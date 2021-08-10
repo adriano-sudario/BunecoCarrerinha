@@ -75,10 +75,10 @@ else
 	items = [quit_item, fullscreen_item, new_game_item];
 
 controls = controller(true);
-current_down_held = controls.is_down_held();
 current_up_held = controls.is_up_held();
-previous_down_held = current_down_held;
+current_down_held = controls.is_down_held();
 previous_up_held = current_up_held;
+previous_down_held = current_down_held;
 
 for (var i = 0; i < array_length(items); i++) {
 	var item = items[i];

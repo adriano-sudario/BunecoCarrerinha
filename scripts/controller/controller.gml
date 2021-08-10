@@ -14,7 +14,7 @@ function controller() {
 		aiming_angle: 0,
 		is_using_gamepad: false,
 		is_left_held: function() {
-			if (gamepad_axis_value(0, gp_axislh) < -.5) {
+			if (gamepad_axis_value(0, gp_axislh) < -.5 || gamepad_button_check(0, gp_padl)) {
 				is_using_gamepad = true;
 				return true;
 			} else {
@@ -25,7 +25,7 @@ function controller() {
 			}
 		},
 		is_right_held: function() {
-			if (gamepad_axis_value(0, gp_axislh) > .5) {
+			if (gamepad_axis_value(0, gp_axislh) > .5 || gamepad_button_check(0, gp_padr)) {
 				is_using_gamepad = true;
 				return true;
 			} else {
@@ -35,8 +35,8 @@ function controller() {
 				return result;
 			}
 		},
-		is_down_held: function() {
-			if (gamepad_axis_value(0, gp_axislv) < -.5) {
+		is_up_held: function() {
+			if (gamepad_axis_value(0, gp_axislv) < -.5 || gamepad_button_check(0, gp_padu)) {
 				is_using_gamepad = true;
 				return true;
 			} else {
@@ -46,8 +46,8 @@ function controller() {
 				return result;
 			}
 		},
-		is_up_held: function() {
-			if (gamepad_axis_value(0, gp_axislv) > .5) {
+		is_down_held: function() {
+			if (gamepad_axis_value(0, gp_axislv) > .5 || gamepad_button_check(0, gp_padd)) {
 				is_using_gamepad = true;
 				return true;
 			} else {
